@@ -1,0 +1,36 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class QuizApp {
+    static String[][] questions = {
+        {"What is 2 + 2?", "4"},
+        {"Capital of Bangladesh?", "Dhaka"},
+        {"What is 10 * 5?", "50"},
+        {"What language is this code?", "Java"}
+    };
+
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        int score = 0;
+
+        for (String[] q : questions) {
+            System.out.println("Q: " + q[0]);
+            String answer = scanner.nextLine().trim();
+            if (answer.equalsIgnoreCase(q[1])) {
+                System.out.println("Correct!");
+                score++;
+            } else {
+                System.out.println("Wrong! Answer: " + q[1]);
+            }
+        }
+
+        System.out.println("Score: " + score + "/" + questions.length);
+
+        try (FileWriter fw = new FileWriter("quiz_scores.txt", true)) {
+            fw.write("Score: " + score + "/" + questions.length + "\n");
+        }
+
+        scanner.close();
+    }
+}
