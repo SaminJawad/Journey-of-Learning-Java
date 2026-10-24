@@ -106,3 +106,9 @@ The 100 problems above are the practice. The carousels below are where the conce
 ---
 
 If this helped you, consider starring the repo — it helps other learners find it.
+
+## License
+
+- Written content (explanations, problem descriptions, series carousels): [CC BY 4.0](LICENSE.md). You may share it with credit to Samin Jawad.
+
+© 2026 Samin Jawad
